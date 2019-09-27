@@ -20,8 +20,7 @@ head.shape("square")
 head.color("black")
 head.penup()
 head.goto(0, 0)
-head.direction = "up"
-
+head.direction = "stop"
 
 # Snake test
 body = []
@@ -32,7 +31,29 @@ food.speed(0)
 food.shape("square")
 food.color("green")
 food.penup()
-food.goto(50, 100)
+food.goto(0, 100)
+
+#Pont
+score = 0
+high_score = 0
+pen = turtle.Turtle()
+pen.speed(0)
+pen.shape("square")
+pen.color("black")
+pen.penup()
+pen.hideturtle()
+pen.goto(350, 350)
+pen.write("Pont: 0 Legmagasabb pont: 0", align="right", font=("Arial", 24, "normal"))
+
+
+def spawn_food():
+    food.goto(random.randint(-390, 390), random.randint(-390, 390))
+    new_body = turtle.Turtle()
+    new_body.speed(0)
+    new_body.shape("square")
+    new_body.color("gray")
+    new_body.penup()
+    body.append(new_body)
 
 
 # A fej mozgatása
@@ -52,19 +73,23 @@ def move():
 
 # Input kezelés
 def go_up():
-    head.direction = "up"
+    if head.direction != "down":
+        head.direction = "up"
 
 
 def go_down():
-    head.direction = "down"
+    if head.direction != "up":
+        head.direction = "down"
 
 
 def go_left():
-    head.direction = "left"
+    if head.direction != "right":
+        head.direction = "left"
 
 
 def go_right():
-    head.direction = "right"
+    if head.direction != "left":
+        head.direction = "right"
 
 
 window.listen()
@@ -80,14 +105,47 @@ window.onkeypress(go_right, "d")
 while True:
     window.update()
     #
+    if head.xcor() > 390 or head.xcor() < -390 or head.ycor() > 390 or head.ycor() < -390:
+        time.sleep(1)
+        head.goto(0, 0)
+        head.direction = "stop"
+        for body_part in body:
+            body_part.goto(1000, 1000)
+        body.clear()
+        food.goto(0, 100)
+        score = 0
+        pen.clear()
+        pen.write("Pont: {} Legmagasabb pont: {}".format(score, high_score), align="right", font=("Arial", 24, "normal"))
+
     if head.distance(food) < 20:
-        food.goto(random.randint(-290, 290), random.randint(-290, 290))
-        new_body = turtle.Turtle()
-        new_body.speed(0)
-        new_body.shape("square")
-        new_body.color("gray")
-        new_body.penup()
-        body.append(new_body)
+        spawn_food()
+        score += 1
+
+        if score > high_score:
+            high_score = score
+            pen.clear()
+            pen.write("Pont: {} Legmagasabb pont: {}".format(score, high_score), align="right", font=("Arial", 24, "normal"))
+
+    for i in range(len(body) - 1, 0, -1):
+        body[i].goto(body[i - 1].xcor(), body[i - 1].ycor())
+
+    if len(body) > 0:
+        body[0].goto(head.xcor(), head.ycor())
+
     move()
+
+    for body_part in body:
+        if body_part.distance(head) < 20:
+            time.sleep(1)
+            head.goto(0, 0)
+            head.direction = "stop"
+            for body_part in body:
+                body_part.goto(1000, 1000)
+            body.clear()
+            food.goto(0, 100)
+            score = 0
+            pen.clear()
+            pen.write("Pont: {} Legmagasabb pont: {}".format(score, high_score), align="right", font=("Arial", 24, "normal"))
+
     time.sleep(delay)
 window.mainloop()
