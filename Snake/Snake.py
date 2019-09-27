@@ -82,7 +82,12 @@ while True:
     #
     if head.distance(food) < 20:
         food.goto(random.randint(-290, 290), random.randint(-290, 290))
-        new_body = 
+        new_body = turtle.Turtle()
+        new_body.speed(0)
+        new_body.shape("square")
+        new_body.color("gray")
+        new_body.penup()
+        body.append(new_body)
     move()
     time.sleep(delay)
 window.mainloop()
