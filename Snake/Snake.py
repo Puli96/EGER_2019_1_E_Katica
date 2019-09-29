@@ -11,6 +11,7 @@ window.bgcolor("lightblue")
 window.setup(width=800, height=800)
 window.tracer(0)
 
+#Lépések között eltelt idő
 delay = 0.1
 
 # Snake fej
