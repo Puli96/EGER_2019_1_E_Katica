@@ -14,7 +14,7 @@ window.tracer(0)
 #Lépések között eltelt idő
 delay = 0.1
 
-# Snake fej
+# Snake feje
 head = turtle.Turtle()
 head.speed(0)
 head.shape("square")
@@ -23,7 +23,7 @@ head.penup()
 head.goto(0, 0)
 head.direction = "stop"
 
-# Snake test
+# Snake teste
 body = []
 
 # Snakk
