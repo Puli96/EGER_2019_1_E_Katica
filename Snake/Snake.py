@@ -4,14 +4,14 @@ import time
 import random
 import sys
 
-# Játékfelület létrehozása
+# Játékfelület létrehozása.
 window = turtle.Screen()
 window.title("Snake (EGER_2019_1_E_Katica)")
 window.bgcolor("lightblue")
 window.setup(width=800, height=800)
 window.tracer(0)
 
-#Lépések között eltelt idő
+#Lépések között eltelt idő.
 delay = 0.1
 
 # Snake feje
@@ -47,7 +47,7 @@ pen.goto(350, 350)
 pen.write("Pont: 0 Legmagasabb pont: 0", align="right", font=("Arial", 24, "normal"))
 
 
-def spawn_food(): #Snakk áthelyezése és teszhossz növelése
+def spawn_food(): #Snakk áthelyezése és teszhossz növelése.
     food.goto(random.randint(-390, 390), random.randint(-390, 390))
     new_body = turtle.Turtle()
     new_body.speed(0)
@@ -57,7 +57,7 @@ def spawn_food(): #Snakk áthelyezése és teszhossz növelése
     body.append(new_body)
 
 
-# A fej mozgatása
+# A fej mozgatása.
 def move():
     if head.direction == "up":
         head.sety(head.ycor() + 20)
