@@ -1,0 +1,10 @@
+1.Áttekintés
+  Alkalmazásuk célja a logika, kéz- szem koordináció, és reflekszek fejlesztése játékos úton. 
+  Alkalmazásunk rendelkezik egyszerű visszajelzési módszerekkel mintpéldául pontszámláló.
+2.Jelenlegi helyzet
+  A játékos tanítás az egyik legegyszerűbb módja a gyerekek érdeklődésének felkeltésére, így 
+  alkalmazásunkat nem csak az oktatás során hanem szabadidejükben is használják.
+3.Vágyálom rendszer
+  Egy Snake játékot szeretnénk készíteni ami készség fejlesztő és szórakoztató. Olyan elemekkel
+  mint például: rangsor pontszámok alapján, nehézségi szint.
+4.Funkcionális követelmények
