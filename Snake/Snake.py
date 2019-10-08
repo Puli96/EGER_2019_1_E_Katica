@@ -46,9 +46,12 @@ pen.hideturtle()
 pen.goto(350, 350)
 pen.write("Pont: 0 Legmagasabb pont: 0", align="right", font=("Arial", 24, "normal"))
 
+def coord_gen():
+    return random.randint(-1, 1) * 20 * 4
+
 
 def spawn_food(): #Snakk áthelyezése és teszhossz növelése.
-    food.goto(random.randint(-390, 390), random.randint(-390, 390))
+    food.goto(coord_gen(), coord_gen())
     new_body = turtle.Turtle()
     new_body.speed(0)
     new_body.shape("square")
