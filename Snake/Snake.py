@@ -8,7 +8,7 @@ import sys
 window = turtle.Screen()
 window.title("Snake (EGER_2019_1_E_Katica)")
 window.bgcolor("lightblue")
-window.setup(width=800, height=800)
+window.setup(width=800, height=900)
 window.tracer(0)
 
 #Lépések között eltelt idő.
@@ -43,7 +43,7 @@ pen.shape("square")
 pen.color("black")
 pen.penup()
 pen.hideturtle()
-pen.goto(350, 350)
+pen.goto(350, 410)
 pen.write("Pont: 0 Legmagasabb pont: 0", align="right", font=("Arial", 24, "normal"))
 
 def coord_gen():
