@@ -5,7 +5,7 @@
   A játékos tanítás az egyik legegyszerűbb módja a gyerekek érdeklődésének felkeltésére, így 
   alkalmazásunkat nem csak az oktatás során hanem szabadidejükben is használják.
 3.Vágyálom rendszer
-  Egy Snake játékot szeretnénk készíteni ami készség fejlesztő és szórakoztató. Olyan elemekkel
+  Egy Játék gyüjteményt szeretnénk készíteni ami készség fejlesztő és szórakoztató. Olyan elemekkel
   mint például: rangsor pontszámok alapján, nehézségi szint.
 4.Funkcionális követelmények
   A játéknak jól védetnek kell lennie,hogy ne tudjanak bele piszkálni vagy felülírni, meggátolva így
