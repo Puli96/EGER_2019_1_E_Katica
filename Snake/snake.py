@@ -1,21 +1,20 @@
 # import stuff
-import turtle
-import time
 import random
-import sys
+import time
+import turtle as t
 
 # Játékfelület létrehozása.
-window = turtle.Screen()
-window.title("Snake (EGER_2019_1_E_Katica)")
-window.bgcolor("lightblue")
-window.setup(width=800, height=900)
-window.tracer(0)
+t.setup(800, 900)
+win = t.Screen()
+win.title("Snake (EGER_2019_1_E_Katica)")
+win.bgcolor("lightblue")
+win.tracer(0)
 
-#Lépések között eltelt idő.
+# Lépések között eltelt idő.
 delay = 0.1
 
 # Snake feje
-head = turtle.Turtle()
+head = t.Turtle()
 head.speed(0)
 head.shape("square")
 head.color("black")
@@ -27,17 +26,18 @@ head.direction = "stop"
 body = []
 
 # Snakk
-food = turtle.Turtle()
+food = t.Turtle()
 food.speed(0)
 food.shape("square")
+food.turtlesize = 10;
 food.color("green")
 food.penup()
 food.goto(0, 100)
 
-#Pont
+# Pont
 score = 0
 high_score = 0
-pen = turtle.Turtle()
+pen = t.Turtle()
 pen.speed(0)
 pen.shape("square")
 pen.color("black")
@@ -46,13 +46,14 @@ pen.hideturtle()
 pen.goto(350, 410)
 pen.write("Pont: 0 Legmagasabb pont: 0", align="right", font=("Arial", 24, "normal"))
 
+
 def coord_gen():
     return random.randint(-1, 1) * 20 * 4
 
 
-def spawn_food(): #Snakk áthelyezése és teszhossz növelése.
+def spawn_food():  # Snakk áthelyezése és teszhossz növelése.
     food.goto(coord_gen(), coord_gen())
-    new_body = turtle.Turtle()
+    new_body = t.Turtle()
     new_body.speed(0)
     new_body.shape("square")
     new_body.color("gray")
@@ -96,18 +97,19 @@ def go_right():
         head.direction = "right"
 
 
-window.listen()
-window.onkeypress(go_up, "Up")
-window.onkeypress(go_up, "w")
-window.onkeypress(go_down, "Down")
-window.onkeypress(go_down, "s")
-window.onkeypress(go_left, "Left")
-window.onkeypress(go_left, "a")
-window.onkeypress(go_right, "Right")
-window.onkeypress(go_right, "d")
+win.listen()
+win.onkeypress(go_up, "Up")
+win.onkeypress(go_up, "w")
+win.onkeypress(go_down, "Down")
+win.onkeypress(go_down, "s")
+win.onkeypress(go_left, "Left")
+win.onkeypress(go_left, "a")
+win.onkeypress(go_right, "Right")
+win.onkeypress(go_right, "d")
+
 # Main loop
 while True:
-    window.update()
+    win.update()
     #
     if head.xcor() > 390 or head.xcor() < -390 or head.ycor() > 390 or head.ycor() < -390:
         time.sleep(1)
@@ -119,7 +121,8 @@ while True:
         food.goto(0, 100)
         score = 0
         pen.clear()
-        pen.write("Pont: {} Legmagasabb pont: {}".format(score, high_score), align="right", font=("Arial", 24, "normal"))
+        pen.write("Pont: {} Legmagasabb pont: {}".format(score, high_score), align="right",
+                  font=("Arial", 24, "normal"))
 
     if head.distance(food) < 20:
         spawn_food()
@@ -128,7 +131,8 @@ while True:
         if score > high_score:
             high_score = score
             pen.clear()
-            pen.write("Pont: {} Legmagasabb pont: {}".format(score, high_score), align="right", font=("Arial", 24, "normal"))
+            pen.write("Pont: {} Legmagasabb pont: {}".format(score, high_score), align="right",
+                      font=("Arial", 24, "normal"))
 
     for i in range(len(body) - 1, 0, -1):
         body[i].goto(body[i - 1].xcor(), body[i - 1].ycor())
@@ -149,7 +153,11 @@ while True:
             food.goto(0, 100)
             score = 0
             pen.clear()
-            pen.write("Pont: {} Legmagasabb pont: {}".format(score, high_score), align="right", font=("Arial", 24, "normal"))
+            pen.write("Pont: {} Legmagasabb pont: {}".format(score, high_score), align="right",
+                      font=("Arial", 24, "normal"))
 
     time.sleep(delay)
-window.mainloop()
+
+if __name__ == "__main__":
+    # window.onkeypress(sys.exit(), "Escape")
+    win.mainloop()
