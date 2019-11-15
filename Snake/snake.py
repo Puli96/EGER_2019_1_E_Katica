@@ -96,6 +96,11 @@ def go_right():
     if head.direction != "left":
         head.direction = "right"
 
+def update_score(s,hs):
+    pen.clear()
+    pen.write("Pont: {} Legmagasabb pont: {}".format(s, hs), align="right",
+              font=("Arial", 24, "normal"))
+
 
 win.listen()
 win.onkeypress(go_up, "Up")
@@ -110,7 +115,7 @@ win.onkeypress(go_right, "d")
 # Main loop
 while True:
     win.update()
-    #
+
     if head.xcor() > 390 or head.xcor() < -390 or head.ycor() > 390 or head.ycor() < -390:
         time.sleep(1)
         head.goto(0, 0)
@@ -120,19 +125,16 @@ while True:
         body.clear()
         food.goto(0, 100)
         score = 0
-        pen.clear()
-        pen.write("Pont: {} Legmagasabb pont: {}".format(score, high_score), align="right",
-                  font=("Arial", 24, "normal"))
+        update_score(score, high_score)
 
     if head.distance(food) < 20:
         spawn_food()
         score += 1
+        update_score(score, high_score)
 
         if score > high_score:
             high_score = score
-            pen.clear()
-            pen.write("Pont: {} Legmagasabb pont: {}".format(score, high_score), align="right",
-                      font=("Arial", 24, "normal"))
+            update_score(score, high_score)
 
     for i in range(len(body) - 1, 0, -1):
         body[i].goto(body[i - 1].xcor(), body[i - 1].ycor())
@@ -152,12 +154,10 @@ while True:
             body.clear()
             food.goto(0, 100)
             score = 0
-            pen.clear()
-            pen.write("Pont: {} Legmagasabb pont: {}".format(score, high_score), align="right",
-                      font=("Arial", 24, "normal"))
+            update_score(score, high_score)
 
     time.sleep(delay)
 
 if __name__ == "__main__":
-    # window.onkeypress(sys.exit(), "Escape")
+    win.onkeypress(sys.exit(), "Escape")
     win.mainloop()
