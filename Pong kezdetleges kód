@@ -34,9 +34,64 @@ ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
+ball.dx = 2
+ball.dy = -2
 
+
+#Működés
+def paddle_a_up():
+    y = paddle_a.ycor()
+    y += 20
+    paddle_a.sety(y)
+ 
+def paddle_a_down():
+    y = paddle_a.ycor()
+    y -= 20
+    paddle_a.sety(y)
+    
+def paddle_a_up():
+    y = paddle_a.ycor()
+    y += 20
+    paddle_b.sety(y)
+ 
+def paddle_a_down():
+    y = paddle_a.ycor()
+    y -= 20
+    paddle_b.sety(y)
+    
+#Billentyű beállítás
+wn.listen()
+wn.onkeypress(paddle_a_up, "w")
+wn.onkeypress(paddle_a_down, "s")
+wn.onkeypress(paddle_a_up, "Up")
+wn.onkeypress(paddle_a_down, "Down")
 
 
 # Game loop:
 while True:
     wn.update()
+    
+#Labda mozgása
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
+    
+    if ball.ycor() > 290:
+        ball.sety(290)
+        ball.dy *= -1
+        
+    if ball.ycor() < -290;
+        ball.sety(-290)
+        ball.dy *= -1
+        
+    if ball.xcor() > 390:
+        ball.goto(0, 0)
+        ball.dx *= -1
+        
+    if ball.xcor() < -390:
+        ball.goto(0, 0)
+        ball.dx *= -1
+        
+    #Platform és a labda
+    if ball.xcor() > 340 and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor - 40:
+        ball.dx *= -1
+    
