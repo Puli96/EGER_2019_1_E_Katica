@@ -1,3 +1,24 @@
+Oct 7:
+
 A program megfelelően fut.
 Pont és legmagasabb pont számláló működik.
 Minimális pontatlanság fellelhető a snack felvételekor.
+
+
+Nov 19:
+
+A sanke megfelelően működik, minden ismert bug kijavítva.
+A menü magában megfelelően működik.
+A játékok menüből való indításánál hibák léptek fel:
+
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/usr/lib64/python3.7/tkinter/__init__.py", line 1705, in __call__
+    return self.func(*args)
+  File "/usr/lib64/python3.7/turtle.py", line 675, in eventfun
+    fun(x, y)
+  File "/media/Projekts/Git/EGER_2019_1_E_Katica/Snake/test/main.py", line 43, in clicked
+    exec(open("snake.py").read()) #nem jó
+  File "<string>", line 147, in <module>
+  File "<string>", line 67, in move
+NameError: name 'head' is not defined
