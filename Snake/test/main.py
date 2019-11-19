@@ -2,8 +2,6 @@ import sys
 import time as time
 import turtle as t
 
-sys.path.append("Snake")
-
 t.setup(800, 900)
 win = t.Screen()
 win.title("Menü (EGER_2019_1_E_Katica)")
@@ -36,9 +34,9 @@ def clicked(x, y):
         if 110 > y > 65:
             print("Yep")
 
-            # pen.clear() #ez kell
+            pen.clear()  # ez kell
             # os.system("snake.py") #nem jó
-            # exec(open("snake.py").read()) #nem jó
+            exec(open("snake.py").read())  # nem jó
             # call(["pytgon", "snake.py"]) #nem jó
             # Popen("python snake.py") #nem jó
 

@@ -3,7 +3,6 @@ import random
 import time
 import turtle as t
 
-
 # Játékfelület létrehozása.
 t.setup(800, 900)
 win = t.Screen()
