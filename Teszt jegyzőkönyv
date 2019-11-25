@@ -22,3 +22,10 @@ Traceback (most recent call last):
   File "<string>", line 147, in <module>
   File "<string>", line 67, in move
 NameError: name 'head' is not defined
+
+
+Nov 25:
+
+A főmenü tökéletesen működik, azonban az almenü nem a megfelelő parancsot hajtja végre kattintásra.
+
+A játékok menüből való idítása során fellépő híbákat még nem sikerült kijavítani.
