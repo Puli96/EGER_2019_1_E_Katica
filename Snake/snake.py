@@ -45,7 +45,8 @@ pen.color("black")
 pen.penup()
 pen.hideturtle()
 pen.goto(350, 410)
-pen.write("Pont: 0 Legmagasabb pont: 0", align="right", font=("Arial", 24, "normal"))
+pen.write("Pont: 0 Legmagasabb pont: 0", align="right",
+            font=("Arial", 24, "normal"))
 
 
 def coord_gen():
