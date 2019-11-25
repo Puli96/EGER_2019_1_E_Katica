@@ -1,6 +1,7 @@
 import sys
 import time as time
 import turtle as t
+import os
 
 sys.path.append("Snake")
 
@@ -27,10 +28,9 @@ def games_menu():
     pen.setpos(0, -30)
     pen.write("Pacman", align="center", font=("Arial", 40))
     time.sleep(0.5)
-    #
 
     pen.setpos(0, -110)
-    pen.write("Mittomén", align="center", font=("Arial", 40))
+    pen.write("Pong", align="center", font=("Arial", 40))
     time.sleep(0.5)
 
     pen.setpos(0, -190)
@@ -40,7 +40,7 @@ def games_menu():
 def main_menu():
     global subMenu
     subMenu = "main"
-    #print(subMenu)
+    # print(subMenu)
     pen.clear()
     pen.pu()
     pen.setpos(0, 50)
@@ -58,39 +58,36 @@ def main_menu():
 def clicked(x, y):
     print(x, y)
     global subMenu
-    if -130 < x < 135 and subMenu == "main":
+    if -130 < x < 135:
 
         if 110 > y > 65 and subMenu == "main":
-            print("Yep")
+            print("Game menu clicked")
             games_menu()
             print(subMenu)
 
         if 25 > y > -20 and subMenu == "main":
-            print("YepYep")
+            print("Score menu clicked")
             # Score
 
         if -60 > y > -100 and subMenu == "main":
-            print("YepYepYep")
-            #sys.exit()
+            print("Exit clicked")
+            # sys.exit()
             # exit
 
         if 110 > y > 65 and subMenu == "games":
-            print("Snake")
-            # pen.clear() #ez kell
-            # os.system("snake.py") #nem jó
-            # exec(open("snake.py").read()) #nem jó
-            # call(["pytgon", "snake.py"]) #nem jó
-            # Popen("python snake.py") #nem jó
+            print("Snake clicked")
+            # pen.clear()
+            os.system("python snake.py")
 
         if 25 > y > -20 and subMenu == "games":
-            print("Pacman")
+            print("Pacman clicked")
             # Score
 
         if -60 > y > -100 and subMenu == "games":
-            print("Mittomén")
+            print("Pong clicked")
 
         if -150 > y > -175 and subMenu == "games":
-            print("Main menu")
+            print("Back to main menu")
             main_menu()
             # back to main menu
 
