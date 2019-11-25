@@ -71,7 +71,7 @@ def clicked(x, y):
 
         if -60 > y > -100 and subMenu == "main":
             print("Exit clicked")
-            # sys.exit()
+            sys.exit()
             # exit
 
         if 110 > y > 65 and subMenu == "games":
