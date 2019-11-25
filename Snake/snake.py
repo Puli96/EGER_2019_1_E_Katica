@@ -30,7 +30,7 @@ body = []
 food = t.Turtle()
 food.speed(0)
 food.shape("square")
-food.turtlesize = 10;
+food.turtlesize = 10
 food.color("green")
 food.penup()
 food.goto(0, 100)
