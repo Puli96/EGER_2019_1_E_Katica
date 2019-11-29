@@ -16,7 +16,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 
 pen = t.Turtle()
 
-
+#Main menü elemeinek kiírása
 def main_menu():
     global subMenu
     subMenu = "main"
@@ -54,6 +54,7 @@ def sub_menu():
     pen.write("Vissza", align="center", font=("Arial", 40))
 
 
+
 def games_menu():
     global subMenu
     subMenu = "games"
@@ -76,7 +77,7 @@ def clicked(x, y):
         if 110 > y > 65 and subMenu == "main":
             print("Game menu clicked")
             games_menu()
-            print(subMenu)
+            #print(subMenu)
 
         if 25 > y > -20 and subMenu == "main":
             print("Score menu clicked")
@@ -89,13 +90,15 @@ def clicked(x, y):
 
         if 110 > y > 65 and subMenu == "games":
             print("Snake clicked")
-            os.system("python {path}/snake.py".format(path=dir_path))
+            os.system("python {path}/games/snake.py".format(path=dir_path))
 
         if 25 > y > -20 and subMenu == "games":
             print("Pacman clicked")
+            # os.system("python {path}/games/pacman.py".format(path=dir_path))
 
         if -60 > y > -100 and subMenu == "games":
             print("Pong clicked")
+            # os.system("python {path}/games/pong.py".format(path=dir_path))
 
         if -150 > y > -175 and subMenu == "games":
             print("Back to main menu")

@@ -48,12 +48,22 @@ pen.goto(350, 410)
 pen.write("Pont: 0 Legmagasabb pont: 0", align="right",
             font=("Arial", 24, "normal"))
 
+liner = t.Turtle()
+liner.speed(0)
+liner.shape("square")
+liner.color("blue")
+liner.penup()
+liner.shapesize(0.1, 500)
+liner.goto(0, 410)
 
 def coord_gen():
     return random.randint(-1, 1) * 20 * 4
 
 
 def spawn_food():  # Snakk áthelyezése és teszhossz növelése.
+    global delay
+    delay -=.0001
+    print("Delay: {d}".format(d=delay))
     food.goto(coord_gen(), coord_gen())
     new_body = t.Turtle()
     new_body.speed(0)
@@ -104,6 +114,21 @@ def update_score(s, hs):
     pen.write("Pont: {} Legmagasabb pont: {}".format(s, hs), align="right",
               font=("Arial", 24, "normal"))
 
+def game_over():
+    global score
+    print("Dead! score: {score}".format(score=score))
+    time.sleep(1)
+    head.goto(0, 0)
+    head.direction = "stop"
+    for body_part in body:
+        body_part.goto(1000, 1000)
+    body.clear()
+    food.goto(0, 100)
+    score = 0
+    update_score(score, high_score)
+    delay = 0.1
+    print("Delay: {d}".format(d=delay))
+
 
 win.listen()
 win.onkeypress(go_up, "Up")
@@ -115,20 +140,14 @@ win.onkeypress(go_left, "a")
 win.onkeypress(go_right, "Right")
 win.onkeypress(go_right, "d")
 
+print("Start. Delay: {d}".format(d=delay))
+
 # Main loop
 while True:
     win.update()
 
-    if head.xcor() > 390 or head.xcor() < -390 or head.ycor() > 390 or head.ycor() < -390:
-        time.sleep(1)
-        head.goto(0, 0)
-        head.direction = "stop"
-        for body_part in body:
-            body_part.goto(1000, 1000)
-        body.clear()
-        food.goto(0, 100)
-        score = 0
-        update_score(score, high_score)
+    if head.xcor() > 370 or head.xcor() < -380 or head.ycor() > 390 or head.ycor() < -420:
+        game_over()
 
     if head.distance(food) < 20:
         spawn_food()
@@ -149,18 +168,7 @@ while True:
 
     for body_part in body:
         if body_part.distance(head) < 20:
-            time.sleep(1)
-            head.goto(0, 0)
-            head.direction = "stop"
-            for body_part in body:
-                body_part.goto(1000, 1000)
-            body.clear()
-            food.goto(0, 100)
-            score = 0
-            update_score(score, high_score)
+            game_over()
 
     time.sleep(delay)
 
-if __name__ == "__main__":
-    win.onkeypress(sys.exit(), "Escape")
-    win.mainloop()

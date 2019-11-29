@@ -34,7 +34,7 @@ Előző  pont  értelmében  semmilyen  igényelt  üzleti  folyamat  nincs  jel
 
 |Model|ID|Név|Verzió  |Kifejtés  | 
 |-|-|-|-|-|
-|Felület|I1|Fő  ablak|v.001|Ablak ahol a játék  megjelenik(800x800)|
+|Felület|I1|Fő  ablak|v.001|Ablak ahol a játék  megjelenik(800x900)|
 |Felület|I2|Információ|v.001|A jelenlegi  és  mindenkori  legmagasabb  pontszám  megjelenítése.|
 |Játék  mechanika|I3|Karakter  mozgása|v0.01|Az adott  játékban a karaktert a felhasználó a megadott  irányba  mozgatja.|
 |Játék  mechanika|I4|Pont szerzés|v0.02|A “Snakk” áthelyezése  és a pontszám  az  információs  felületen  való  növelése.|
