@@ -17,7 +17,6 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 
 pen = t.Turtle()
 
-
 # Main menü elemeinek kiírása
 def main_menu():
     global subMenu
