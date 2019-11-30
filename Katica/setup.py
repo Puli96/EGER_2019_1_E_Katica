@@ -7,14 +7,17 @@
 ##########################################
 #               Használata:              #
 #                                        #
-#          python3 setup.py build        #
+# a packages-be írd be az összes         #
+# szükséges import-ot                    #
+# majd futtad le a setap.py-t:           #
+# python3 setup.py build                 #
 ##########################################
 
 from cx_Freeze import setup, Executable
 
 base = None
 
-executables = [Executable("snake.py", base=base)]
+executables = [Executable("main.py", base=base)]
 
 packages = ["idna", "time", "turtle"]
 options = {

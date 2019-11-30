@@ -3,10 +3,9 @@ import random
 import time
 import turtle as t
 
-
 # Játékfelület létrehozása.
-t.setup(800, 900)
 win = t.Screen()
+win.setup(800, 900)
 win.title("Katica (EGER_2019_1_E_Katica)")
 win.bgcolor("lightblue")
 win.tracer(0)
@@ -46,8 +45,9 @@ pen.penup()
 pen.hideturtle()
 pen.goto(350, 410)
 pen.write("Pont: 0 Legmagasabb pont: 0", align="right",
-            font=("Arial", 24, "normal"))
+          font=("Arial", 24, "normal"))
 
+#
 liner = t.Turtle()
 liner.speed(0)
 liner.shape("square")
@@ -56,13 +56,14 @@ liner.penup()
 liner.shapesize(0.1, 500)
 liner.goto(0, 410)
 
+
 def coord_gen():
     return random.randint(-1, 1) * 20 * 4
 
 
 def spawn_food():  # Snakk áthelyezése és teszhossz növelése.
     global delay
-    delay -=.0001
+    delay -= .0001
     print("Delay: {d}".format(d=delay))
     food.goto(coord_gen(), coord_gen())
     new_body = t.Turtle()
@@ -114,8 +115,10 @@ def update_score(s, hs):
     pen.write("Pont: {} Legmagasabb pont: {}".format(s, hs), align="right",
               font=("Arial", 24, "normal"))
 
+
 def game_over():
     global score
+    global delay
     print("Dead! score: {score}".format(score=score))
     time.sleep(1)
     head.goto(0, 0)
@@ -171,4 +174,3 @@ while True:
             game_over()
 
     time.sleep(delay)
-

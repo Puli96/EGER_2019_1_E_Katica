@@ -36,6 +36,7 @@ tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ]
 
+
 def square(x, y):
     path.up()
     path.goto(x, y)
@@ -47,6 +48,7 @@ def square(x, y):
         path.left(90)
 
     path.end_fill()
+
 
 def offset(point):
     x = (floor(point.x, 20) + 200) / 20
