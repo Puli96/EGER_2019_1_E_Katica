@@ -55,3 +55,35 @@ def offset(point):
     y = (180 - floor(point.y, 20)) / 20
     index = int(x + y * 20)
     return index
+
+
+def valid(point):
+    index = offset(point)
+
+    if tiles[index] == 0:
+        return False
+
+    index = offset(point + 19)
+
+    if tiles[index] == 0:
+        return False
+
+    return point.x % 20 == 0 or point.y % 20 == 0
+
+def world():
+    bgcolor('lightblue')
+    path.color('blue')
+
+    for index in range(len(tiles)):
+        tile = tiles[index]
+
+        if tile > 0:
+            x = (index % 20) * 20 - 200
+            y = 180 - (index // 20) * 20
+            square(x, y)
+
+            if tile == 1:
+                path.up()
+                path.goto(x + 10, y + 10)
+                path.dot(2, 'white')
+
