@@ -97,7 +97,7 @@ def clicked(x, y):
 
         if 25 > y > -20 and subMenu == "games":
             print("Pacman clicked")
-            # os.system("python {path}/games/pacman.py".format(path=dir_path))
+            os.system("python {path}/games/pacman.py".format(path=dir_path))
             return
 
         if -60 > y > -100 and subMenu == "games":
