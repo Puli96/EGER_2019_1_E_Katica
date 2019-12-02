@@ -33,3 +33,6 @@ A játékok menüből való idítása során fellépő híbákat még nem siker�
 Dec 1:
 
 A pacman játék hozzáadásra került,működőképes
+
+Dec 2:
+A Pong játékban pár hiba jelen van még, például a labda gyorsasággal apróbb hibák.
