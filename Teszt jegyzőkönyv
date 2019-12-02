@@ -36,3 +36,4 @@ A pacman játék hozzáadásra került,működőképes
 
 Dec 2:
 A Pong játékban pár hiba jelen van még, például a labda gyorsasággal apróbb hibák.
+Pongv2 hozzáadása, design és szintektikai változások, a program fut, labda mozgás és ütközési hibák még vannak.
