@@ -4,12 +4,12 @@ import random
 import time
 import turtle
 
-#set up screen
+#Képernyő beállitás
 screen = turtle.Screen()
 screen.bgcolor("green")
 screen.title("Pong")
 
-# set up border
+#Border
 border_pen = turtle.Turtle()
 border_pen.speed(0)
 border_pen.color("white")
@@ -49,7 +49,7 @@ timestring = "Time %s" %time
 time_pen.write(timestring, False, align="left", font= ("Arial", 14, "normal"))
 time_pen.hideturtle()
 
-#create the player turtle
+#Player
 player = turtle.Turtle()
 player.color("blue")
 player.shape("square")
@@ -60,7 +60,7 @@ player.setposition(-280,-250)#(x,y)
 player.setheading(90)
 playerspeed = 15
 
-#create the AIplayer turtle
+#AI
 AIplayer = turtle.Turtle()
 AIplayer.color("black")
 AIplayer.shape("square")
@@ -72,7 +72,7 @@ AIplayer.setheading(90)
 AIplayerspeed = 15
 
 
-#create the pong
+#Pong létrehozása
 pong = turtle.Turtle()
 pong.color("red")
 pong.shape("circle")
@@ -86,7 +86,7 @@ pong.dy = -5
 pong.dx = 5
 
 
-#Move player up and down
+#Játékos mozgatása
 def move_up():
     y = player.ycor()
     y += playerspeed
@@ -101,7 +101,7 @@ def move_down():
         y = -260
     player.sety(y)
 
-#keyboard bindings
+#bill binding
 turtle.listen()
 turtle.onkey(move_up, "Up")
 turtle.onkey(move_down, "Down")
@@ -117,11 +117,11 @@ def isCollision(t1, t2):
 #main game loop
 while True:
 
-    #move pong ball
+
     pong.sety(pong.ycor() +pong.dy)
     pong.setx(pong.xcor() +pong.dx)
 
-    #check for bounce and redirect it
+
     if pong.ycor() < -300:
         pong.dy *= -1
     if pong.ycor() > 300:
@@ -133,7 +133,7 @@ while True:
     if pong.xcor() > 300:
         pong.dx *= -1
 
-    #move AI paddle (might speed up pong movement)
+
     y = pong.ycor()
     y += AIplayerspeed
     AIplayer.sety(y)
@@ -142,7 +142,7 @@ while True:
     if AIplayer.ycor() < -250:
         AIplayerspeed *= -1
 
-    #collision pong and player
+    #Ütközés
     if isCollision(pong, player):
         pong.dy *= -1
         pong.dx *= -1
@@ -152,12 +152,12 @@ while True:
         score_pen.clear()
         score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))
 
-    #collision pong and AIplayer
+    #ütközés AI
     if isCollision(pong, AIplayer):
         pong.dy *= -1
         pong.dx *= -1
 
-    #updates timer and increases ball speed
+    #Ball speed
     if seconds > 29:
         pong.dy *= -2
         pong.dx *= -2
@@ -166,9 +166,3 @@ while True:
         pong.dy *= -3
         pong.dx *= -3
 
-     #displays timer but makes game laggy
-#    seconds += 0.1
-#    time = seconds
-#    timestring = "Time: %s" %time
-#    time_pen.clear()
-#    time_pen.write(timestring, False, align="Left", font=("Arial", 14, "normal"))
