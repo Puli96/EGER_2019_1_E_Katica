@@ -28,9 +28,9 @@ def main_menu():
     pen.write("Játékok", align="center", font=("Arial", 40))
     time.sleep(0.5)
 
-    pen.setpos(0, -30)
-    pen.write("Pontok", align="center", font=("Arial", 40))
-    time.sleep(0.5)
+#    pen.setpos(0, -30)
+#    pen.write("Pontok", align="center", font=("Arial", 40))
+#    time.sleep(0.5)
 
     pen.setpos(0, -110)
     pen.write("Kilépés", align="center", font=("Arial", 40))
@@ -80,10 +80,10 @@ def clicked(x, y):
             # print(subMenu)
             return
 
-        if 25 > y > -20 and subMenu == "main":
-            print("Score menu clicked")
-            score_menu()
-            return
+#        if 25 > y > -20 and subMenu == "main":
+#           print("Score menu clicked")
+#           score_menu()
+#           return
 
         if -60 > y > -100 and subMenu == "main":
             print("Exit clicked")
@@ -102,7 +102,7 @@ def clicked(x, y):
 
         if -60 > y > -100 and subMenu == "games":
             print("Pong clicked")
-            # os.system("python {path}/games/pong.py".format(path=dir_path))
+            os.system("python {path}/games/Pong.py".format(path=dir_path))
             return
 
         if -150 > y > -175 and subMenu == "games":
