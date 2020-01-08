@@ -1,7 +1,3 @@
-import sys
-import time as time
-import turtle as t
-import os
 
 sys.path.append("Katica")
 
