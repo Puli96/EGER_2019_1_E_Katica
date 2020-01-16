@@ -74,5 +74,10 @@ VII. Absztrakt modell
 
 A program mükődése során a felhasználó egyféle szerepkörben szerepelhet, mint játékos.
 Egyetlen sima user felület áll rendelkezésre, a programhoz mindenkinek ugyanolyan
-joga van. Rendelkezésre áll a 3 játék
+joga van. Rendelkezésre áll a 3 játék: -Pong, Pac-Man, Snake.
+
+VIII. Implementációs terv
+
+A játékok, a program felülete Python Turtle, PyCharmban készült.
+Python 3.7 és/vagy 3.7.5-ben készültek.
 
