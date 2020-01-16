@@ -68,4 +68,11 @@ Kliens:
 		Környezet:python 3.7.5
 
 		Konfiguráció: Nem specifikus.
+		
+		
+VII. Absztrakt modell
+
+A program mükődése során a felhasználó egyféle szerepkörben szerepelhet, mint játékos.
+Egyetlen sima user felület áll rendelkezésre, a programhoz mindenkinek ugyanolyan
+joga van. Rendelkezésre áll a 3 játék
 
