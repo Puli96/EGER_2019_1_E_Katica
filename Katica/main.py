@@ -1,5 +1,5 @@
-
-
+import sys
+from turtle import *
 sys.path.append("Katica")
 
 
