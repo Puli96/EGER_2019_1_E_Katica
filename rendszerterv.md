@@ -45,3 +45,27 @@ IV. Követelmények
 	- Letisztult, egyszerű kinézet
 	- Minimális tárhely használata
 
+V. Funkcionális terv
+
+Rendszerszereplők:
+	-Felhasználó
+
+Rendszer használati esetek és lefutásaik:
+	Felhasználó:
+		-játék
+
+
+VI. Fizikai környezet.
+
+Kliens:
+
+	Eszköz1	
+
+		Eszköz:PC
+		
+		Operációs rendszer: Windows/Linux/IOS
+		
+		Környezet:python 3.7.5
+
+		Konfiguráció: Nem specifikus.
+
