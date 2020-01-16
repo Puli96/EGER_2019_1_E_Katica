@@ -81,3 +81,14 @@ VIII. Implementációs terv
 A játékok, a program felülete Python Turtle, PyCharmban készült.
 Python 3.7 és/vagy 3.7.5-ben készültek.
 
+IX. Tesztterv
+
+I. Alpha teszt:
+	Az Alpha tesztet a program készítői végzik, amelyben a rendszert hibáit keresik.
+	Amint felderítenek egy hibát jelentést írnak róla és javítják.
+	Az alpha teszt során külön kell tesztelni több fontos funkciót, mint például:
+	-A karakter mozgás tökéletes mükődése, megfelelő pontrendszer, dizájn letisztultsága.
+II. Béta teszt
+	Itt a felhasználók elvégzik a tesztet, ahol az apróbb bugok, a játékok stabilitása,
+	letisztultsága a cél.
+
