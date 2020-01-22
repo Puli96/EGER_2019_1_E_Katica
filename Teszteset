@@ -1,0 +1,21 @@
+Tesztelt program: Python legújabb verzió.
+
+Játék implementálása az alap programba:
+    - Csak az egyik játékot lehet elindítani. *javítva
+2019.12.10
+ 
+ 
+Pong játék:
+     -A "lapátok" nem működtek megfelelően. *javítva
+     -A pontok nem megfelelően számoltak. *javítva
+2019.12.12
+     
+Pac-Man
+     -Nem számolta rendesen a "kaját". *javítva
+     -Nem növekedett így a Pac-Man. *javítva
+2019.12.12
+     
+Snake
+     -Pálya területi probléma. *javítva
+2019.12.13
+     
